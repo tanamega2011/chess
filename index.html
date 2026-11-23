@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analysis Desk</title>
+    <meta
+      name="description"
+      content="Play both sides with best-move advice from Stockfish"
+    />
+    <meta name="theme-color" content="#14110e" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        
+        
+      </header>
+      <main class="layout">
+        <section class="board-col">
+          <div class="status-row">
+            <p id="status" class="status">White to move</p>
+            <p id="view-label" class="muted">White's view</p>
+          </div>
+          <p id="auto-note" class="muted auto-note" hidden></p>
+          <div class="board-row">
+            <div class="board-wrap">
+              <div id="board"></div>
+              <div id="promo" class="promo" hidden>
+                <div class="promo-card" role="dialog" aria-modal="true" aria-labelledby="promo-title">
+                  <h2 id="promo-title">Promote Pawn</h2>
+                  <div id="promo-options" class="promo-options"></div>
+                  <button id="promo-cancel" type="button" class="btn btn-ghost">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="side">
+          <section class="times" id="think-times">
+            <button type="button" data-think="2000" class="btn btn-brass" aria-pressed="true">2 sec</button>
+            <button type="button" data-think="1000" class="btn btn-ghost" aria-pressed="false">1 sec</button>
+            <button type="button" data-think="1" class="btn btn-ghost" aria-pressed="false">Instant</button>
+          </section>
+          <section class="controls">
+            <button id="auto-white" type="button" class="btn btn-ghost" aria-pressed="false">Auto White</button>
+            <button id="auto-black" type="button" class="btn btn-ghost" aria-pressed="false">Auto Black</button>
+            <button id="new-game" type="button" class="btn btn-brass">New Game</button>
+            <button id="undo" type="button" class="btn btn-ghost" disabled>Undo</button>
+            <button id="side-white" type="button" class="btn btn-brass" aria-pressed="true">White Bottom</button>
+            <button id="side-black" type="button" class="btn btn-ghost" aria-pressed="false">Black Bottom</button>
+            <button id="special-mode" type="button" class="btn btn-ghost" aria-pressed="false" style="grid-column: 1 / -1;">Billion Move Mode</button>
+          </section>
+          
+          <section class="card">
+            <h2 class="section-title">Move History</h2>
+            <div id="history" class="history">
+              <p class="muted">No moves yet</p>
+            </div>
+          </section>
+          
+        </aside>
+      </main>
+    </div>
+    <div id="ghost" hidden></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
